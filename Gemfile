@@ -34,6 +34,13 @@ gem 'bootstrap-sass' # adds bootstrap
 gem 'jquery-rails' # adds jQuery so Bootstrap works
 gem 'font-awesome-rails' # adds font-awesome
 
+# Make fake users
+gem 'faker'
+
+# Pagination
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
