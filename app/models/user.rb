@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  
   attr_accessor :remember_token, :activation_token
   
   before_save   :downcase_email
@@ -40,6 +41,16 @@ class User < ApplicationRecord
     update_attribute(:remember_digest, nil)
   end
   
+  # Activates an account.
+  def activate
+    update_columns(activated: true, activated_at: Time.zone.now)
+  end
+  
+  # Sends activation email.
+  def send_activation_email
+    UserMailer.account_activation(self).deliver_now
+  end
+  
   
   private
     
@@ -53,4 +64,5 @@ class User < ApplicationRecord
       self.activation_token  = User.new_token
       self.activation_digest = User.digest(activation_token)
     end
+    
 end
