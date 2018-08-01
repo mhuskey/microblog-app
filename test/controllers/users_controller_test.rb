@@ -3,7 +3,7 @@ require 'test_helper'
 class UsersControllerTest < ActionDispatch::IntegrationTest
   
   def setup
-    @base_title = "Ruby on Rails Sample App"
+    @base_title = "Ruby on Rails Microblog App"
     @user       = users(:matt)
     @other_user = users(:archer)
   end
